@@ -1,0 +1,31 @@
+read
+	mol pqr final_conf_without_water.pqr 
+end
+elec
+	mg-auto
+	dime 129 129 129
+#	domainlength 1000 1000 1000
+#	cglen 114.4168 79.9034 82.6608
+#	cglen 120.4168 120.9034 120.6608
+#	cglen 200.4168 200.9034 200.6608	
+	cglen 400.4168 400.9034 400.6608		
+	fglen 400.4168 400.9034 400.6608		
+#	fglen 87.304 67.002 68.624
+	cgcent 0 0 0
+	fgcent 0 0 0
+	mol 1
+	lpbe
+	bcfl sdh
+	pdie 2.0
+	sdie 78.54
+	srfm smol
+	chgm spl2
+	sdens 10.0
+	srad 1.4
+	swin 0.3
+	temp 298.15
+	calcenergy total
+	calcforce no
+	write pot dx final_conf_without_water 
+end
+quit
